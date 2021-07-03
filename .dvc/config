@@ -1,0 +1,6 @@
+[core]
+    remote = myremote
+['remote "localremote"']
+    url = ../../local_remote_dir
+['remote "myremote"']
+    url = s3://udacitydevops/dvcstore/
