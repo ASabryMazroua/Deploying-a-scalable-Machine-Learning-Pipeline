@@ -55,3 +55,9 @@ def test_inference():
     preds = inference(model, X_train)
     assert len(preds) == len(X_train) #Assert that the length is the same as x_train
     assert np.all((preds==0)|(preds == 1)) == True #Assert all values are 0 or 1
+
+
+if __name__ == "__main__":
+    test_train_model()
+    test_compute_model_metrics()
+    test_inference()
