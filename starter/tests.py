@@ -13,7 +13,7 @@ from .starter.ml.data import process_data
 from .starter.ml.model import train_model, compute_model_metrics, inference
 
 # Add code to load in the data.
-data = pd.read_csv(os.path.join(os.getcwd(),r"data/census_clean.csv"))
+data = pd.read_csv(os.path.join(os.getcwd(),r"starter/data/census_clean.csv"))
 
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 train, test = train_test_split(data, test_size=0.20)
