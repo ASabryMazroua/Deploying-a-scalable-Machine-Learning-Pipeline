@@ -12,8 +12,8 @@ from typing import List
 from starter.starter.ml.model import inference
 from starter.starter.ml.data import process_data
 #Import the model to be used to predict
-model = pd.read_pickle(r"starter/model/model.pkl.dvc")
-Encoder = pd.read_pickle(r"starter/model/encoder.pkl.dvc")
+model = pd.read_pickle(os.path.join(os.getcwd(),r"starter/model/model.pkl"))
+Encoder = pd.read_pickle(os.path.join(os.getcwd(),r"starter/model/encoder.pkl"))
 
 #Initial a FastAPI instance
 app = FastAPI()
