@@ -29,7 +29,5 @@ We have used 20% of the original dataset for evaluation purposes of the model.
 We have used 80% of the original dataset for the training purposes of the model.
 
 ## Quantitative Analyses
+Model performance is measured based on three metrics: fbeta score, precision score and recall score.
 
-## Ethical Considerations
-
-## Caveats and Recommendations
