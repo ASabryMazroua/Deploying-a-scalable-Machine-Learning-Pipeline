@@ -8,7 +8,7 @@ A 3 functions defined to test the API Get/Post functionalities
 """
 import json
 from starlette.testclient import TestClient
-from main import app
+from .main import app
 
 client = TestClient(app)
 

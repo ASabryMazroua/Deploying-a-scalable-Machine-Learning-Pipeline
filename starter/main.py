@@ -9,9 +9,10 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List
 #Import the inference function to be used to predict the values
-from starter.ml.model import inference
+from starter.starter.ml.model import inference
+from starter.stater.ml.data import process_data
 #Import the model to be used to predict
-model = pd.read_pickle(r"./model/model.pkl")
+model = pd.read_pickle(r"starter/model/model.pkl")
 
 #Initial a FastAPI instance
 app = FastAPI()
@@ -26,7 +27,20 @@ app = FastAPI()
 # pydantic models
 class DataIn(BaseModel):
     #The input should be alist of 108 values 
-    input_row: List[int] = [64.0, 195366.0, 13.0, 0.0, 0.0, 40.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0]
+    age : int
+    workclass : str
+    fnlgt : int
+    education : str 
+    education_num : int
+    marital_status : str
+    occupation : str
+    relationship : str
+    race : str
+    sex : str
+    capital_gain : int
+    capital_loss : int
+    hours_per_week : int
+    native_country : str
 
 class DataOut(BaseModel):
     #The forecast output will be either >50K or <50K 
@@ -58,8 +72,21 @@ def get_prediction(payload: DataIn):
     #Checing that its length is 108
     if len(input_row) != 108:
         raise HTTPException(status_code=400, detail="Data length is not accurate! Please Enter a list of 108 elements")
+    # Process the data with the process_data function.
+    cat_features = [
+    "workclass",
+    "education",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native-country",
+]
+    X_processed, y_processed, encoder, lb = process_data(X, categorical_features=cat_features, training=False)
     #Calling the inference function to make a prediction  
     prediction_outcome = inference(model, convert(input_row))[0]
+    
     #Interpreting the prediction for the end user
     if prediction_outcome == 0:
         prediction_outcome = "Income < 50k"
