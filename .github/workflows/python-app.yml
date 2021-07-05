@@ -47,3 +47,4 @@ jobs:
     - name: Test with pytest
       run: |
         pytest starter/tests.py
+        pytest starter/api_tests.py
