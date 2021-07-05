@@ -71,7 +71,7 @@ def get_prediction(payload: DataIn):
     hours_per_week = payload.hours_per_week
     native_country = payload.native_country
     #Converted the inputs into Dataframe to be processed 
-    df = pd.DataFrame([{{"age" : age,
+    df = pd.DataFrame([{"age" : age,
                         "workclass" : workclass,
                         "fnlgt" : fnlgt,
                         "education" : education,
@@ -84,7 +84,7 @@ def get_prediction(payload: DataIn):
                         "capital-gain" : capital_gain,
                         "capital-loss" : capital_loss,
                         "hours-per-week" : hours_per_week,
-                        "native-country" : native_country}}])
+                        "native-country" : native_country}])
     # Process the data with the process_data function.
     cat_features = [
     "workclass",
