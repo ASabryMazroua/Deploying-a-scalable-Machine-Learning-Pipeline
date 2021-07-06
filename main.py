@@ -48,6 +48,11 @@ class DataOut(BaseModel):
     #The forecast output will be either >50K or <50K 
     forecast: str = "Income > 50k"
 
+#The Welcome page
+@app.get("/")
+async def root():
+    return {"Welcome": "to the model!!"}
+
 # routes
 @app.get("/welcome")
 async def welcome():
