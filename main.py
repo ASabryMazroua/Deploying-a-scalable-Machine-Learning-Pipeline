@@ -11,12 +11,6 @@ from typing import List
 #Import the inference function to be used to predict the values
 from starter.starter.ml.model import inference
 from starter.starter.ml.data import process_data
-#Import the model to be used to predict
-model = pd.read_pickle(r"starter/model copy/model.pkl")
-Encoder = pd.read_pickle(r"starter/model copy/encoder.pkl")
-
-#Initial a FastAPI instance
-app = FastAPI()
 
 #Give Heroku the ability to pull in data from DVC upon app start up.
 if "DYNO" in os.environ and os.path.isdir(".dvc"):
@@ -24,6 +18,13 @@ if "DYNO" in os.environ and os.path.isdir(".dvc"):
     if os.system("dvc pull") != 0:
         exit("dvc pull failed")
     os.system("rm -r .dvc .apt/usr/lib/dvc")
+
+#Import the model to be used to predict
+model = pd.read_pickle(r"starter/model/model.pkl")
+Encoder = pd.read_pickle(r"starter/model/encoder.pkl")
+
+#Initial a FastAPI instance
+app = FastAPI()
 
 # pydantic models
 class DataIn(BaseModel):
