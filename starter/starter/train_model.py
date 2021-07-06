@@ -33,5 +33,6 @@ X_train, y_train, encoder, lb = process_data(
 model = train_model(X_train, y_train)
 pd.to_pickle(model, "starter/model/model.pkl")
 
-#Saving the encoder for being used in the API later
+#Saving the encoder and the LabelBinarizer for being used in the API later
 pd.to_pickle(encoder, "starter/model/encoder.pkl")
+pd.to_pickle(lb, "starter/model/lb.pkl")

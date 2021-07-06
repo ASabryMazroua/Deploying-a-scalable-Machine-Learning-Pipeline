@@ -1,0 +1,81 @@
+Here are the Performance results for the slices of education feature
+Bachelors
+Predcision:  0.8112959719789843 
+Recall:      0.8343088698784331 
+fbeta:       0.8226415094339622 
+*-**-**-**-**-*
+HS-grad
+Predcision:  0.8703923900118906 
+Recall:      0.43701492537313436 
+fbeta:       0.5818759936406995 
+*-**-**-**-**-*
+11th
+Predcision:  1.0 
+Recall:      0.35 
+fbeta:       0.5185185185185185 
+*-**-**-**-**-*
+Masters
+Predcision:  0.8407960199004975 
+Recall:      0.881126173096976 
+fbeta:       0.8604887983706722 
+*-**-**-**-**-*
+9th
+Predcision:  1.0 
+Recall:      0.14814814814814814 
+fbeta:       0.25806451612903225 
+*-**-**-**-**-*
+Some-college
+Predcision:  0.8137996219281664 
+Recall:      0.6207642393655372 
+fbeta:       0.7042944785276074 
+*-**-**-**-**-*
+Assoc-acdm
+Predcision:  0.8333333333333334 
+Recall:      0.660377358490566 
+fbeta:       0.7368421052631579 
+*-**-**-**-**-*
+Assoc-voc
+Predcision:  0.8388278388278388 
+Recall:      0.6343490304709142 
+fbeta:       0.7223974763406941 
+*-**-**-**-**-*
+7th-8th
+Predcision:  0.8571428571428571 
+Recall:      0.15 
+fbeta:       0.2553191489361702 
+*-**-**-**-**-*
+Doctorate
+Predcision:  0.8596491228070176 
+Recall:      0.9607843137254902 
+fbeta:       0.9074074074074074 
+*-**-**-**-**-*
+Prof-school
+Predcision:  0.903370786516854 
+Recall:      0.950354609929078 
+fbeta:       0.9262672811059909 
+*-**-**-**-**-*
+5th-6th
+Predcision:  1.0 
+Recall:      0.3125 
+fbeta:       0.47619047619047616 
+*-**-**-**-**-*
+10th
+Predcision:  1.0 
+Recall:      0.22580645161290322 
+fbeta:       0.3684210526315789 
+*-**-**-**-**-*
+1st-4th
+Predcision:  1.0 
+Recall:      0.3333333333333333 
+fbeta:       0.5 
+*-**-**-**-**-*
+Preschool
+Predcision:  0.0 
+Recall:      1.0 
+fbeta:       0.0 
+*-**-**-**-**-*
+12th
+Predcision:  1.0 
+Recall:      0.3333333333333333 
+fbeta:       0.5 
+*-**-**-**-**-*
